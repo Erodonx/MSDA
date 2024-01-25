@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-sm-8 offset-sm-2">
+                <h1>Vos informations</h1>
+                <table class="table table-light table-hover">
+                    <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th colspan="2">Rôles</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{ informations.email }}</td>
+{#                        Les rôles sont un tableau, il nous faire une boucle :#}
+                        {% for role in informations.roles %}
+                          <td>{{ role }}</td>
+                        {% endfor %}
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
