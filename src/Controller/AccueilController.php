@@ -15,21 +15,21 @@ class AccueilController extends AbstractController
     private $discRepo;
     private $em;
 
-    public function __construct(ArtistRepository $artistRepo, DiscRepository $discRepo, EntityManagerInterface $em)
+    /*public function __construct(ArtistRepository $artistRepo, DiscRepository $discRepo, EntityManagerInterface $em)
     {
         $this->artistRepo = $artistRepo;
         $this->discRepo = $discRepo;
         $this->em = $em;
 
-    }
+    }*/
     #[Route('/accueil', name: 'app_accueil')]
-    public function index(): Response
+    public function index()
     {
        //on appelle le repository pour accéder à la fonction
-        $artistes = $this->artistRepo->getSomeArtists("Neil");
+       echo('salut');
 
         //on teste le contenu de la variable $artistes : dd() veut dire Dump and Die
-        dd($artistes); 
+       /* dd($artistes); */
 
      // ...    
 
