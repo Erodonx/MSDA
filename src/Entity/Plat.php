@@ -5,9 +5,11 @@ namespace App\Entity;
 use App\Repository\PlatRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+
+use ApiPlatform\Metadata\ApiResource;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-
+#[ApiResource]
 #[ORM\Entity(repositoryClass: PlatRepository::class)]
 class Plat
 {
