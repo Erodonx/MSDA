@@ -23,15 +23,9 @@ class AccueilController extends AbstractController
 
     }*/
     #[Route('/accueil', name: 'app_accueil')]
-    public function index()
+    public function index() : Response
     {
-       //on appelle le repository pour accéder à la fonction
-       echo('salut');
-
-        //on teste le contenu de la variable $artistes : dd() veut dire Dump and Die
-       /* dd($artistes); */
-
-     // ...    
+        return $this->render('accueil/index.html.twig');
 
     }
 

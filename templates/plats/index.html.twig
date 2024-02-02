@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block title %}plats{% endblock %}
+
+{% block body %}
+<div class="container">
+    {% for plat in plats %}
+  {#  <span class="d-block">
+        {{plat.libelle}} - {{plat.description}} - {{plat.image}} - {{plat.prix}} #}
+        <div class="row row-cols-1 row-md-cols-2 pt-4">
+<div class="col-12 px-4 pb-4 justify-content-right">
+           <div class="card bg-dark rounded">
+           <div class="card-header text-light">{{plat.libelle}} | {{plat.prix}}</div>
+               <div class="card-body">
+                   <div class="row">
+                       <div class="col-4">
+                           <img class="card-img-bottom"
+                               src="/images/{{plat.image}}"
+                               alt="Card images Pinterest">
+                       </div>
+                       <div class="col-8 px-5 px-lg-0 pr-5 pb-3 position-static">
+                           <p class="card-text text-light text-left">{{plat.description | raw}}</p>
+                           <a href="{{ path('app_panier_ajout', {id: plat.id}) }}" class="btn btn-primary text-center position-absolute commands"
+                               >Ajouter au panier</a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+        </div>
+    </div>
+ {% endfor %}
+{% endblock %}

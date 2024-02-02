@@ -25,11 +25,20 @@ class Commande
     #[ORM\Column]
     private ?int $etat = null;
 
-    #[ORM\OneToMany(mappedBy: 'commande', targetEntity: Detail::class)]
+    #[ORM\OneToMany(mappedBy: 'commande', targetEntity: Detail::class, cascade: ['persist'] )]
     private Collection $details;
 
     #[ORM\ManyToOne(inversedBy: 'commandes')]
     private ?Utilisateur $utilisateur = null;
+
+    #[ORM\Column(length: 100, nullable: true)]
+    private ?string $Adresse_livraison = null;
+
+    #[ORM\Column(length: 100, nullable: true)]
+    private ?string $Adresse_facturation = null;
+
+    #[ORM\Column(length: 50, nullable: true)]
+    private ?string $Methode_paiement = null;
 
     public function __construct()
     {
@@ -116,6 +125,42 @@ class Commande
     public function setUtilisateur(?Utilisateur $utilisateur): static
     {
         $this->utilisateur = $utilisateur;
+
+        return $this;
+    }
+
+    public function getAdresseLivraison(): ?string
+    {
+        return $this->Adresse_livraison;
+    }
+
+    public function setAdresseLivraison(?string $Adresse_livraison): static
+    {
+        $this->Adresse_livraison = $Adresse_livraison;
+
+        return $this;
+    }
+
+    public function getAdresseFacturation(): ?string
+    {
+        return $this->Adresse_facturation;
+    }
+
+    public function setAdresseFacturation(?string $Adresse_facturation): static
+    {
+        $this->Adresse_facturation = $Adresse_facturation;
+
+        return $this;
+    }
+
+    public function getMethodePaiement(): ?string
+    {
+        return $this->Methode_paiement;
+    }
+
+    public function setMethodePaiement(?string $Methode_paiement): static
+    {
+        $this->Methode_paiement = $Methode_paiement;
 
         return $this;
     }

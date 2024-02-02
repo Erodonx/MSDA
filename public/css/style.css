@@ -1,6 +1,19 @@
-body {
+/*body {
     background-color: #222222;
 }
 h1, p {
     color: #C9C9C9;
+}*/
+.card{
+    transition: transform .5s;   
+   }
+.card:hover{
+   
+    background-color: lightpink !important;
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform:scale(1.1);
+   }
+.commands{
+    bottom:0; right:0;
 }

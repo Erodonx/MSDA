@@ -93,7 +93,7 @@ class DistrictFixtures extends Fixture
                  ->setDateCommande($dt)
                  ->setTotal(65.5)
                  ->setEtat(1);
-                 $utilisateur1 = $UtilisateurRepo->find(Utilisateur::class->getId(1));
+                 $utilisateur1 = $UtilisateurRepo->find(1);
         $commande1->setUtilisateur($utilisateur1);
         $manager->persist($commande1);
 

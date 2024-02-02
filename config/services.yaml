@@ -27,4 +27,7 @@ services:
            $mailer: '@Symfony\Component\Mailer\MailerInterface'
        tags:
            - { name: doctrine.event_subscriber }
+    App\Service\PanierService:
+        arguments:
+            
     # please note that last definitions always *replace* previous ones

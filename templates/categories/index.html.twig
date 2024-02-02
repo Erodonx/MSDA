@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CategoriesController!{% endblock %}
+
+{% block body %}
+<div class="container">
+    {% for categorie in categories %}
+        <div class="row row-cols-1 row-md-cols-2 pt-4">
+<div class="col-12 px-4 pb-4 justify-content-right">
+           <div class="card bg-dark rounded">
+           <div class="card-header text-light">{{categorie.libelle}}</div>
+               <div class="card-body">
+                   <div class="row">
+                       <div class="col-4">
+                           <img class="card-img-bottom"
+                               src="/images/{{categorie.image}}"
+                               alt="Card images Pinterest">
+                       </div>
+                       <div class="col-8 px-5 px-lg-0 pr-5 pb-3 position-static">
+                           <p class="card-text text-light text-left">Une description normale</p>
+                       </div>
+                   </div>
+               </div>
+           </div>
+        </div>
+    </div>
+ {% endfor %}
+{% endblock %}
