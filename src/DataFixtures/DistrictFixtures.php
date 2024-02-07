@@ -22,19 +22,19 @@ class DistrictFixtures extends Fixture
         $cat1= new Categorie();
         $cat1
             ->setLibelle('Pasta')
-            ->setImage('Pasta.jpg')
+            ->setImage('pasta_cat.jpg')
             ->setIsActive('1');
         $manager->persist($cat1);
         $cat2= new Categorie();
         $cat2 
             ->setLibelle('Pizza')
-            ->setImage('Pizza.jpg')
+            ->setImage('pizza_cat.jpg')
             ->setIsActive('1');
         $manager->persist($cat2);
         $cat3=new Categorie();
         $cat3
             ->setLibelle('Burger')
-            ->setImage('Burger.jpg')
+            ->setImage('burger_cat.jpg')
             ->setIsActive('1');
         $manager->persist($cat3);
 
@@ -46,7 +46,7 @@ class DistrictFixtures extends Fixture
               ->setLibelle('Pâtes carbo')
               ->setDescription('Des pates carbobobobo')
               ->setPrix(8.5)
-              ->setImage('pastabobo.jpg')
+              ->setImage('pastabobo.jpeg')
               ->setIsActive(1);
         $manager->persist($plat1);
         $plat2= new Plat();
@@ -55,7 +55,7 @@ class DistrictFixtures extends Fixture
               ->setLibelle('Pâtes bolo')
               ->setDescription('Beaux lolos')
               ->setPrix(8.5)
-              ->setImage('Bolôlo.jpg')
+              ->setImage('Bôlolo.jpeg')
               ->setIsActive(1);
         $manager->persist($plat2);
         $plat3= new Plat();
@@ -64,7 +64,7 @@ class DistrictFixtures extends Fixture
              ->setLibelle('Pizza kebab')
              ->setDescription('Salade, tomates, oignons.')
              ->setPrix(12.5)
-             ->setImage('kebab.jpg')
+             ->setImage('pizzakebab.png')
              ->setIsActive(1);
         $manager->persist($plat3);
         $plat4 = new Plat();
@@ -73,7 +73,7 @@ class DistrictFixtures extends Fixture
               ->setLibelle('Putin Burger')
               ->setDescription('Puissance et pouvoir')
               ->setPrix(65.5)
-              ->setImage('putin.jpg')
+              ->setImage('Putin_hidden.jpg')
               ->setIsActive(1);
         $manager->persist($plat4);
         $plat5 = new Plat();
@@ -82,12 +82,12 @@ class DistrictFixtures extends Fixture
                ->setLibelle('Double Beef Burger')
                ->setDescription('DE LA VIANDE ET DE LA VIANDE ET DE LA VIANDE!!!!!!!!!')
                ->setPrix(12.5)
-               ->setImage('double-beef.jpg')
+               ->setImage('double_beef.jpg')
                ->setIsActive(1);
         $manager->persist($plat5);
         
         
-        $commande1=new Commande();
+       /* $commande1=new Commande();
         $dt= new DateTime();
         $commande1
                  ->setDateCommande($dt)
@@ -104,7 +104,7 @@ class DistrictFixtures extends Fixture
                   ->setEtat(1);
                   $utilisateur2 = $UtilisateurRepo->find(2);
                   $commande2->setUtilisateur($utilisateur2);
-        $manager->persist($commande2);
+        $manager->persist($commande2);*/
         
 
 

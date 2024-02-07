@@ -54,7 +54,7 @@ class CommandeController extends AbstractController
             $commande->addDetail($detail);
             $total+=($plat->getPrix()*$quantite);
         }
-        $commande->setTotal($total);
+        $commande->setTotal($total); 
         $commande->setAdresseFacturation($form->get('Adresse_facturation')->getData());
         $commande->setAdresseLivraison($form->get('Adresse_livraison')->getData());
         $commande->setMethodePaiement($form->get('Methode_paiement')->getData());

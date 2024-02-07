@@ -22,7 +22,7 @@ class ContactController extends AbstractController
 {
     //#[isGranted('ROLE_CLIENT', message: "Nous sommes désolés, vous ne disposez pas des autorisations nécessaires pour accèder à cette page!")]
     #[Route('/contact', name: 'app_contact')]
-    public function index(#[CurrentUser] ?Utilisateur $user,Request $request, EntityManagerInterface $entityManager, MailService $ms, ): Response
+    public function index(Request $request, EntityManagerInterface $entityManager, MailService $ms, ): Response
     {
         $form = $this->createForm(ContactFormType::class);
         $form->handleRequest($request);
@@ -39,7 +39,7 @@ class ContactController extends AbstractController
             $entityManager->persist($message);
             $entityManager->flush();
             //envoi de mail avec notre service MailService
-            $email = $ms->sendMail( $user->getEmail(), $message->getEmail(), $message->getObjet(), $message->getMessage() );
+           // $email = $ms->sendMail( 'admin@velvet.com', $message->getEmail(), $message->getObjet(), $message->getMessage() );
 //            dd($message->getEmail());
 return $this->redirect("/");
         }

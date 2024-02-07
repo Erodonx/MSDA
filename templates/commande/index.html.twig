@@ -15,6 +15,7 @@
         {{ form_row(commandeForm.Adresse_livraison, {'attr': {'class': 'col-12'}}) }}
         {{ form_row(commandeForm.Adresse_facturation,{'attr': {'class': 'col-12'}})}} 
         {{ form_row(commandeForm.Methode_paiement,{'attr': {'class': 'col-12'}})}}
+        {{ form_row(commandeForm.CGU_validation, {'attr' : {'class': 'col-12'}})}}
 
         <button type="submit" class="btn">Commander</button>
     {{ form_end(commandeForm) }}

@@ -11,6 +11,25 @@ body {
     -webkit-transform: scale(1.1);
     transform:scale(1.1);
    }
+   #card_putin:hover{
+    background-color: red !important;
+    -ms-transform:scale(2);
+    -webkit-transform: scale(2);
+    transform:scale(2) 18 sec;
+    animation: rotate 18s linear infinite; animation-delay: 0s;}
+        @keyframes rotate {
+            0% {rotate: 0deg;}
+            100% {rotate: 360deg;}
+    
+    
+        
+    }
+a{
+    text-decoration:none;
+}
+    #card_putin{
+        transition: transform 18s;
+    }
 .commands{
     bottom:0; right:0;
 }

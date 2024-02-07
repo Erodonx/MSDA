@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\CommandeRepository;
 use Doctrine\Common\Collections\ArrayCollection;
+use App\Repository\DetailRepository;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
@@ -85,6 +86,20 @@ class Commande
         $this->etat = $etat;
 
         return $this;
+    }
+    public function __toString()
+    {
+    $datetostr =$this->getDateCommande();
+    $datemodif = $datetostr->format('d/m/Y');
+    $result = 'Merci pour votre commande du :' . $datemodif .  " Le total de votre commande est de" . $this->getTotal();
+    return (string) $result;
+    }
+
+    public function __toStringCommande()
+    {
+        $this->getId();
+        $result = 'Commande The district #' . $this->getId();
+        return (string) $result;
     }
 
     /**

@@ -8,8 +8,30 @@
         {{plat.libelle}} - {{plat.description}} - {{plat.image}} - {{plat.prix}} #}
         <div class="row row-cols-1 row-md-cols-2 pt-4">
 <div class="col-12 px-4 pb-4 justify-content-right">
-           <div class="card bg-dark rounded">
-           <div class="card-header text-light">{{plat.libelle}} | {{plat.prix}}</div>
+ {% if plat.image == 'Putin_hidden.png' %}
+           <div class="card bg-dark rounded" id="card_putin">
+          
+           <div class="card-header text-light">{{plat.libelle}} | {{plat.prix}} €</div>
+               <div class="card-body" id="verification">
+                   <div class="row">
+                       <div class="col-4">
+                           <img class="card-img-bottom"
+                               src="/images/{{plat.image}}"
+                               alt="Card images Pinterest" id="img">
+                       </div>
+                       <div class="col-8 px-5 px-lg-0 pr-5 pb-3 position-static">
+                           <p class="card-text text-light text-left" id="ukraine">{{plat.description | raw}}</p>
+                           <a href="{{ path('app_panier_ajout', {id: plat.id}) }}" class="btn btn-primary text-center position-absolute commands"
+                               >Ajouter au panier</a>
+                            <span id="putine"></span>
+                       </div>
+                   </div>
+               </div>
+           </div>
+        </div>
+           {% else %}
+            <div class="card bg-dark rounded">
+           <div class="card-header text-light">{{plat.libelle}} | {{plat.prix}} € </div>
                <div class="card-body">
                    <div class="row">
                        <div class="col-4">
@@ -27,5 +49,28 @@
            </div>
         </div>
     </div>
+ {% endif %}
  {% endfor %}
+{% endblock %}
+
+{% block javascripts %}
+<script>
+var verification = document.getElementById('verification');
+var img = document.getElementById('img');
+var ukraine= document.getElementById('ukraine');
+var putine = document.getElementById('putine');
+
+verification.addEventListener("mouseover", (e) => {
+    putine.innerHTML = '<audio src="/audio/balade.mp3" autoplay loop></audio>';
+    img.src = "/images/wide-putin-awokenRes.gif";
+    ukraine.innerHTML='IL FAUT ENVAHIR L\'UKRAINE';
+});
+verification.addEventListener("mouseout", (e) => {
+    putine.innerHTML = '';
+    img.src = "/images/Putin_hidden.png";
+    ukraine.innerHTML='Le Putin Burger, une bouchée de ce délicieux burger et vous êtes pris d\'une envie irrépressible d\'envahir l\'Ukraine et ainsi exhiber votre gigantesque table en marbre au monde entier';
+});
+</script>
+              <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
 {% endblock %}

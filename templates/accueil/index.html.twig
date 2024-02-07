@@ -4,6 +4,9 @@
      {% for message in app.flashes('success') %}
      <div class='alert alert-success mt-4'>{{message}}</div>
      {% endfor %}
+      {% for message in app.flashes('warning') %}
+     <div class='alert alert-warning mt-4'>{{message}}</div>
+     {% endfor %}
          <div class="row mt-5">
              <div class="col-10 mx-auto">
                  <h1>Bienvenue sur "The District"</h1>
